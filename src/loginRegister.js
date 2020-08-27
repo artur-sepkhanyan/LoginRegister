@@ -1,36 +1,31 @@
 import './loginRegister.css';
-import {registeredUsers,users,reg,log} from './logreg';
+import {Persons,registeredUsers,users,reg,log,lowerCaseLetters,upperCaseLetters,numbers} from './logreg';
 
 let store = () => {
-    let nameSurname = document.getElementById('nameSurname');
+    let nameSurname = document.forms[0].name.value;
     let email = document.forms[0].email.value;
-    let pw = document.getElementById('pw');
-    let cpw = document.getElementById('cpw')
-    let lowerCaseLetters = /[a-z]/g;
-    let upperCaseLetters = /[A-Z]/g;
-    let numbers = /[0-9]/g;
+    let pw = document.forms[0].pw.value;
+    let cpw = document.forms[0].cpw.value;
+    let myUsers = new Persons(nameSurname,email,pw);
 
-    if (!email || !pw.value.length || !pw.value.match(numbers) 
-        || !pw.value.match(upperCaseLetters) ||  !pw.value.match(lowerCaseLetters)
-        || pw.value !== cpw.value){
+    if (!email || !pw || !pw.match(numbers) 
+        || !pw.match(upperCaseLetters) ||  !pw.match(lowerCaseLetters)
+        || pw !== cpw){
         alert('Please fill in all the fields')
         } else {
-        users.push({
-            name: nameSurname.value,
-            email: email,
-            password: pw.value
-        });
+        users.push(myUsers);
         localStorage.setItem('users', JSON.stringify(users));
         alert('Your account has been created');
+        console.log(typeof(users));
     }
 }
 
 let check = () => {
-    let email = document.getElementById('userName').value;
-    let password = document.getElementById('userPw').value;
+    let email = document.forms[0].userName.value;
+    let pass = document.forms[0].uservalue;
 
     const user = users.find(el => {
-        return el.email === email && el.password === password;
+        return el.email === email && el.pass === pass;
     });
     if (user) {
         alert('You are logged in.');

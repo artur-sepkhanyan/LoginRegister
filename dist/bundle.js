@@ -86,10 +86,137 @@
 /************************************************************************/
 /******/ ({
 
-/***/ "../node_modules/style-loader/dist/runtime/injectStylesIntoStyleTag.js":
-/*!*****************************************************************************!*\
-  !*** ../node_modules/style-loader/dist/runtime/injectStylesIntoStyleTag.js ***!
-  \*****************************************************************************/
+/***/ "./node_modules/css-loader/dist/cjs.js!./src/loginRegister.css":
+/*!*********************************************************************!*\
+  !*** ./node_modules/css-loader/dist/cjs.js!./src/loginRegister.css ***!
+  \*********************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../node_modules/css-loader/dist/runtime/api.js */ "./node_modules/css-loader/dist/runtime/api.js");
+/* harmony import */ var _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0__);
+// Imports
+
+var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default()(true);
+// Module
+___CSS_LOADER_EXPORT___.push([module.i, "    .login {\n    margin: 50px auto;\n    width: 320px;\n  }\n\n  .login form {\n    margin: auto;\n    padding: 22px 22px 22px 22px;\n    width: 100%;\n    border-radius: 5px;\n    border: 2px solid gray;\n  }\n\n  .login form input {\n    background-color: wheat;\n    border-radius: 0px 3px 3px 0px;\n    color: #a9a9a9;\n    margin-bottom: 1em;\n    padding: 0 16px;\n    width: 90%;\n    height: 50px;\n  }\n\n\n  .login form #rgstr_btn, #log_btn {\n    background: green;\n    border: 0;\n    width: 100%;\n    height: 40px;\n    border-radius: 3px;\n    color: white;\n    cursor: pointer;\n    transition: background 0.3s ease-in-out;\n  }\n  \n ", "",{"version":3,"sources":["webpack://src/loginRegister.css"],"names":[],"mappings":"IAAI;IACA,iBAAiB;IACjB,YAAY;EACd;;EAEA;IACE,YAAY;IACZ,4BAA4B;IAC5B,WAAW;IACX,kBAAkB;IAClB,sBAAsB;EACxB;;EAEA;IACE,uBAAuB;IACvB,8BAA8B;IAC9B,cAAc;IACd,kBAAkB;IAClB,eAAe;IACf,UAAU;IACV,YAAY;EACd;;;EAGA;IACE,iBAAiB;IACjB,SAAS;IACT,WAAW;IACX,YAAY;IACZ,kBAAkB;IAClB,YAAY;IACZ,eAAe;IACf,uCAAuC;EACzC","sourcesContent":["    .login {\n    margin: 50px auto;\n    width: 320px;\n  }\n\n  .login form {\n    margin: auto;\n    padding: 22px 22px 22px 22px;\n    width: 100%;\n    border-radius: 5px;\n    border: 2px solid gray;\n  }\n\n  .login form input {\n    background-color: wheat;\n    border-radius: 0px 3px 3px 0px;\n    color: #a9a9a9;\n    margin-bottom: 1em;\n    padding: 0 16px;\n    width: 90%;\n    height: 50px;\n  }\n\n\n  .login form #rgstr_btn, #log_btn {\n    background: green;\n    border: 0;\n    width: 100%;\n    height: 40px;\n    border-radius: 3px;\n    color: white;\n    cursor: pointer;\n    transition: background 0.3s ease-in-out;\n  }\n  \n "],"sourceRoot":""}]);
+// Exports
+/* harmony default export */ __webpack_exports__["default"] = (___CSS_LOADER_EXPORT___);
+
+
+/***/ }),
+
+/***/ "./node_modules/css-loader/dist/runtime/api.js":
+/*!*****************************************************!*\
+  !*** ./node_modules/css-loader/dist/runtime/api.js ***!
+  \*****************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+/*
+  MIT License http://www.opensource.org/licenses/mit-license.php
+  Author Tobias Koppers @sokra
+*/
+// css base code, injected by the css-loader
+// eslint-disable-next-line func-names
+module.exports = function (useSourceMap) {
+  var list = []; // return the list of modules as css string
+
+  list.toString = function toString() {
+    return this.map(function (item) {
+      var content = cssWithMappingToString(item, useSourceMap);
+
+      if (item[2]) {
+        return "@media ".concat(item[2], " {").concat(content, "}");
+      }
+
+      return content;
+    }).join('');
+  }; // import a list of modules into the list
+  // eslint-disable-next-line func-names
+
+
+  list.i = function (modules, mediaQuery, dedupe) {
+    if (typeof modules === 'string') {
+      // eslint-disable-next-line no-param-reassign
+      modules = [[null, modules, '']];
+    }
+
+    var alreadyImportedModules = {};
+
+    if (dedupe) {
+      for (var i = 0; i < this.length; i++) {
+        // eslint-disable-next-line prefer-destructuring
+        var id = this[i][0];
+
+        if (id != null) {
+          alreadyImportedModules[id] = true;
+        }
+      }
+    }
+
+    for (var _i = 0; _i < modules.length; _i++) {
+      var item = [].concat(modules[_i]);
+
+      if (dedupe && alreadyImportedModules[item[0]]) {
+        // eslint-disable-next-line no-continue
+        continue;
+      }
+
+      if (mediaQuery) {
+        if (!item[2]) {
+          item[2] = mediaQuery;
+        } else {
+          item[2] = "".concat(mediaQuery, " and ").concat(item[2]);
+        }
+      }
+
+      list.push(item);
+    }
+  };
+
+  return list;
+};
+
+function cssWithMappingToString(item, useSourceMap) {
+  var content = item[1] || ''; // eslint-disable-next-line prefer-destructuring
+
+  var cssMapping = item[3];
+
+  if (!cssMapping) {
+    return content;
+  }
+
+  if (useSourceMap && typeof btoa === 'function') {
+    var sourceMapping = toComment(cssMapping);
+    var sourceURLs = cssMapping.sources.map(function (source) {
+      return "/*# sourceURL=".concat(cssMapping.sourceRoot || '').concat(source, " */");
+    });
+    return [content].concat(sourceURLs).concat([sourceMapping]).join('\n');
+  }
+
+  return [content].join('\n');
+} // Adapted from convert-source-map (MIT)
+
+
+function toComment(sourceMap) {
+  // eslint-disable-next-line no-undef
+  var base64 = btoa(unescape(encodeURIComponent(JSON.stringify(sourceMap))));
+  var data = "sourceMappingURL=data:application/json;charset=utf-8;base64,".concat(base64);
+  return "/*# ".concat(data, " */");
+}
+
+/***/ }),
+
+/***/ "./node_modules/style-loader/dist/runtime/injectStylesIntoStyleTag.js":
+/*!****************************************************************************!*\
+  !*** ./node_modules/style-loader/dist/runtime/injectStylesIntoStyleTag.js ***!
+  \****************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -366,133 +493,6 @@ module.exports = function (list, options) {
 
 /***/ }),
 
-/***/ "./node_modules/css-loader/dist/cjs.js!./src/loginRegister.css":
-/*!*********************************************************************!*\
-  !*** ./node_modules/css-loader/dist/cjs.js!./src/loginRegister.css ***!
-  \*********************************************************************/
-/*! exports provided: default */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../node_modules/css-loader/dist/runtime/api.js */ "./node_modules/css-loader/dist/runtime/api.js");
-/* harmony import */ var _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0__);
-// Imports
-
-var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default()(true);
-// Module
-___CSS_LOADER_EXPORT___.push([module.i, "    .login {\n    margin: 50px auto;\n    width: 320px;\n  }\n\n  .login form {\n    margin: auto;\n    padding: 22px 22px 22px 22px;\n    width: 100%;\n    border-radius: 5px;\n    border: 2px solid gray;\n  }\n\n  .login form input {\n    background-color: wheat;\n    border-radius: 0px 3px 3px 0px;\n    color: #a9a9a9;\n    margin-bottom: 1em;\n    padding: 0 16px;\n    width: 90%;\n    height: 50px;\n  }\n\n\n  .login form #rgstr_btn, #log_btn {\n    background: green;\n    border: 0;\n    width: 100%;\n    height: 40px;\n    border-radius: 3px;\n    color: white;\n    cursor: pointer;\n    transition: background 0.3s ease-in-out;\n  }\n  \n ", "",{"version":3,"sources":["webpack://src/loginRegister.css"],"names":[],"mappings":"IAAI;IACA,iBAAiB;IACjB,YAAY;EACd;;EAEA;IACE,YAAY;IACZ,4BAA4B;IAC5B,WAAW;IACX,kBAAkB;IAClB,sBAAsB;EACxB;;EAEA;IACE,uBAAuB;IACvB,8BAA8B;IAC9B,cAAc;IACd,kBAAkB;IAClB,eAAe;IACf,UAAU;IACV,YAAY;EACd;;;EAGA;IACE,iBAAiB;IACjB,SAAS;IACT,WAAW;IACX,YAAY;IACZ,kBAAkB;IAClB,YAAY;IACZ,eAAe;IACf,uCAAuC;EACzC","sourcesContent":["    .login {\n    margin: 50px auto;\n    width: 320px;\n  }\n\n  .login form {\n    margin: auto;\n    padding: 22px 22px 22px 22px;\n    width: 100%;\n    border-radius: 5px;\n    border: 2px solid gray;\n  }\n\n  .login form input {\n    background-color: wheat;\n    border-radius: 0px 3px 3px 0px;\n    color: #a9a9a9;\n    margin-bottom: 1em;\n    padding: 0 16px;\n    width: 90%;\n    height: 50px;\n  }\n\n\n  .login form #rgstr_btn, #log_btn {\n    background: green;\n    border: 0;\n    width: 100%;\n    height: 40px;\n    border-radius: 3px;\n    color: white;\n    cursor: pointer;\n    transition: background 0.3s ease-in-out;\n  }\n  \n "],"sourceRoot":""}]);
-// Exports
-/* harmony default export */ __webpack_exports__["default"] = (___CSS_LOADER_EXPORT___);
-
-
-/***/ }),
-
-/***/ "./node_modules/css-loader/dist/runtime/api.js":
-/*!*****************************************************!*\
-  !*** ./node_modules/css-loader/dist/runtime/api.js ***!
-  \*****************************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-/*
-  MIT License http://www.opensource.org/licenses/mit-license.php
-  Author Tobias Koppers @sokra
-*/
-// css base code, injected by the css-loader
-// eslint-disable-next-line func-names
-module.exports = function (useSourceMap) {
-  var list = []; // return the list of modules as css string
-
-  list.toString = function toString() {
-    return this.map(function (item) {
-      var content = cssWithMappingToString(item, useSourceMap);
-
-      if (item[2]) {
-        return "@media ".concat(item[2], " {").concat(content, "}");
-      }
-
-      return content;
-    }).join('');
-  }; // import a list of modules into the list
-  // eslint-disable-next-line func-names
-
-
-  list.i = function (modules, mediaQuery, dedupe) {
-    if (typeof modules === 'string') {
-      // eslint-disable-next-line no-param-reassign
-      modules = [[null, modules, '']];
-    }
-
-    var alreadyImportedModules = {};
-
-    if (dedupe) {
-      for (var i = 0; i < this.length; i++) {
-        // eslint-disable-next-line prefer-destructuring
-        var id = this[i][0];
-
-        if (id != null) {
-          alreadyImportedModules[id] = true;
-        }
-      }
-    }
-
-    for (var _i = 0; _i < modules.length; _i++) {
-      var item = [].concat(modules[_i]);
-
-      if (dedupe && alreadyImportedModules[item[0]]) {
-        // eslint-disable-next-line no-continue
-        continue;
-      }
-
-      if (mediaQuery) {
-        if (!item[2]) {
-          item[2] = mediaQuery;
-        } else {
-          item[2] = "".concat(mediaQuery, " and ").concat(item[2]);
-        }
-      }
-
-      list.push(item);
-    }
-  };
-
-  return list;
-};
-
-function cssWithMappingToString(item, useSourceMap) {
-  var content = item[1] || ''; // eslint-disable-next-line prefer-destructuring
-
-  var cssMapping = item[3];
-
-  if (!cssMapping) {
-    return content;
-  }
-
-  if (useSourceMap && typeof btoa === 'function') {
-    var sourceMapping = toComment(cssMapping);
-    var sourceURLs = cssMapping.sources.map(function (source) {
-      return "/*# sourceURL=".concat(cssMapping.sourceRoot || '').concat(source, " */");
-    });
-    return [content].concat(sourceURLs).concat([sourceMapping]).join('\n');
-  }
-
-  return [content].join('\n');
-} // Adapted from convert-source-map (MIT)
-
-
-function toComment(sourceMap) {
-  // eslint-disable-next-line no-undef
-  var base64 = btoa(unescape(encodeURIComponent(JSON.stringify(sourceMap))));
-  var data = "sourceMappingURL=data:application/json;charset=utf-8;base64,".concat(base64);
-  return "/*# ".concat(data, " */");
-}
-
-/***/ }),
-
 /***/ "./src/loginRegister.css":
 /*!*******************************!*\
   !*** ./src/loginRegister.css ***!
@@ -500,7 +500,7 @@ function toComment(sourceMap) {
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-var api = __webpack_require__(/*! ../../node_modules/style-loader/dist/runtime/injectStylesIntoStyleTag.js */ "../node_modules/style-loader/dist/runtime/injectStylesIntoStyleTag.js");
+var api = __webpack_require__(/*! ../node_modules/style-loader/dist/runtime/injectStylesIntoStyleTag.js */ "./node_modules/style-loader/dist/runtime/injectStylesIntoStyleTag.js");
             var content = __webpack_require__(/*! !../node_modules/css-loader/dist/cjs.js!./loginRegister.css */ "./node_modules/css-loader/dist/cjs.js!./src/loginRegister.css");
 
             content = content.__esModule ? content.default : content;
@@ -534,36 +534,33 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _loginRegister_css__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./loginRegister.css */ "./src/loginRegister.css");
 /* harmony import */ var _loginRegister_css__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_loginRegister_css__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var _logreg__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./logreg */ "./src/logreg.js");
+function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
+
 
 
 
 var store = function store() {
-  var nameSurname = document.getElementById('nameSurname');
+  var nameSurname = document.forms[0].name.value;
   var email = document.forms[0].email.value;
-  var pw = document.getElementById('pw');
-  var cpw = document.getElementById('cpw');
-  var lowerCaseLetters = /[a-z]/g;
-  var upperCaseLetters = /[A-Z]/g;
-  var numbers = /[0-9]/g;
+  var pw = document.forms[0].pw.value;
+  var cpw = document.forms[0].cpw.value;
+  var myUsers = new _logreg__WEBPACK_IMPORTED_MODULE_1__["Persons"](nameSurname, email, pw);
 
-  if (!email || !pw.value.length || !pw.value.match(numbers) || !pw.value.match(upperCaseLetters) || !pw.value.match(lowerCaseLetters) || pw.value !== cpw.value) {
+  if (!email || !pw || !pw.match(_logreg__WEBPACK_IMPORTED_MODULE_1__["numbers"]) || !pw.match(_logreg__WEBPACK_IMPORTED_MODULE_1__["upperCaseLetters"]) || !pw.match(_logreg__WEBPACK_IMPORTED_MODULE_1__["lowerCaseLetters"]) || pw !== cpw) {
     alert('Please fill in all the fields');
   } else {
-    _logreg__WEBPACK_IMPORTED_MODULE_1__["users"].push({
-      name: nameSurname.value,
-      email: email,
-      password: pw.value
-    });
+    _logreg__WEBPACK_IMPORTED_MODULE_1__["users"].push(myUsers);
     localStorage.setItem('users', JSON.stringify(_logreg__WEBPACK_IMPORTED_MODULE_1__["users"]));
     alert('Your account has been created');
+    console.log(_typeof(_logreg__WEBPACK_IMPORTED_MODULE_1__["users"]));
   }
 };
 
 var check = function check() {
-  var email = document.getElementById('userName').value;
-  var password = document.getElementById('userPw').value;
+  var email = document.forms[0].userName.value;
+  var pass = document.forms[0].uservalue;
   var user = _logreg__WEBPACK_IMPORTED_MODULE_1__["users"].find(function (el) {
-    return el.email === email && el.password === password;
+    return el.email === email && el.pass === pass;
   });
 
   if (user) {
@@ -582,7 +579,7 @@ _logreg__WEBPACK_IMPORTED_MODULE_1__["log"].addEventListener('click', check);
 /*!***********************!*\
   !*** ./src/logreg.js ***!
   \***********************/
-/*! exports provided: registeredUsers, users, reg, log */
+/*! exports provided: registeredUsers, users, reg, log, lowerCaseLetters, upperCaseLetters, numbers, Persons */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -591,10 +588,26 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "users", function() { return users; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "reg", function() { return reg; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "log", function() { return log; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "lowerCaseLetters", function() { return lowerCaseLetters; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "upperCaseLetters", function() { return upperCaseLetters; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "numbers", function() { return numbers; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "Persons", function() { return Persons; });
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
 var registeredUsers = localStorage.getItem('users');
 var users = registeredUsers ? JSON.parse(registeredUsers) : [];
 var reg = document.getElementById('rgstr_btn');
 var log = document.getElementById('log_btn');
+var lowerCaseLetters = /[a-z]/g;
+var upperCaseLetters = /[A-Z]/g;
+var numbers = /[0-9]/g;
+var Persons = function Persons(username, email, password) {
+  _classCallCheck(this, Persons);
+
+  this.username = username;
+  this.email = email;
+  this.password = password;
+};
 
 /***/ })
 
