@@ -534,7 +534,9 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _loginRegister_css__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./loginRegister.css */ "./src/loginRegister.css");
 /* harmony import */ var _loginRegister_css__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_loginRegister_css__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var _logreg__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./logreg */ "./src/logreg.js");
+/* harmony import */ var _user__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./user */ "./src/user.js");
 function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
+
 
 
 
@@ -544,7 +546,7 @@ var store = function store() {
   var email = document.forms[0].email.value;
   var pw = document.forms[0].pw.value;
   var cpw = document.forms[0].cpw.value;
-  var myUsers = new _logreg__WEBPACK_IMPORTED_MODULE_1__["Persons"](nameSurname, email, pw);
+  var myUsers = new _user__WEBPACK_IMPORTED_MODULE_2__["User"](nameSurname, email, pw);
 
   if (!email || !pw || !pw.match(_logreg__WEBPACK_IMPORTED_MODULE_1__["numbers"]) || !pw.match(_logreg__WEBPACK_IMPORTED_MODULE_1__["upperCaseLetters"]) || !pw.match(_logreg__WEBPACK_IMPORTED_MODULE_1__["lowerCaseLetters"]) || pw !== cpw) {
     alert('Please fill in all the fields');
@@ -579,7 +581,7 @@ _logreg__WEBPACK_IMPORTED_MODULE_1__["log"].addEventListener('click', check);
 /*!***********************!*\
   !*** ./src/logreg.js ***!
   \***********************/
-/*! exports provided: registeredUsers, users, reg, log, lowerCaseLetters, upperCaseLetters, numbers, Persons */
+/*! exports provided: registeredUsers, users, reg, log, lowerCaseLetters, upperCaseLetters, numbers */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -591,9 +593,6 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "lowerCaseLetters", function() { return lowerCaseLetters; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "upperCaseLetters", function() { return upperCaseLetters; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "numbers", function() { return numbers; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "Persons", function() { return Persons; });
-function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-
 var registeredUsers = localStorage.getItem('users');
 var users = registeredUsers ? JSON.parse(registeredUsers) : [];
 var reg = document.getElementById('rgstr_btn');
@@ -601,8 +600,23 @@ var log = document.getElementById('log_btn');
 var lowerCaseLetters = /[a-z]/g;
 var upperCaseLetters = /[A-Z]/g;
 var numbers = /[0-9]/g;
-var Persons = function Persons(username, email, password) {
-  _classCallCheck(this, Persons);
+
+/***/ }),
+
+/***/ "./src/user.js":
+/*!*********************!*\
+  !*** ./src/user.js ***!
+  \*********************/
+/*! exports provided: User */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "User", function() { return User; });
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+var User = function User(username, email, password) {
+  _classCallCheck(this, User);
 
   this.username = username;
   this.email = email;

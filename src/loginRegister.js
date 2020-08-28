@@ -1,12 +1,12 @@
 import './loginRegister.css';
-import {Persons,registeredUsers,users,reg,log,lowerCaseLetters,upperCaseLetters,numbers} from './logreg';
-
+import {registeredUsers,users,reg,log,lowerCaseLetters,upperCaseLetters,numbers} from './logreg';
+import {User} from './user';
 let store = () => {
     let nameSurname = document.forms[0].name.value;
     let email = document.forms[0].email.value;
     let pw = document.forms[0].pw.value;
     let cpw = document.forms[0].cpw.value;
-    let myUsers = new Persons(nameSurname,email,pw);
+    let myUsers = new User(nameSurname,email,pw);
 
     if (!email || !pw || !pw.match(numbers) 
         || !pw.match(upperCaseLetters) ||  !pw.match(lowerCaseLetters)
